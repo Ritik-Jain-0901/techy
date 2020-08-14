@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>assignmeent1</title>
+	<link rel="stylesheet" type="text/css" href="css\bootstrap.css"> 
+	<link rel="stylesheet" type="text/css" href="assignment1.css">
+</head>
+<body>
+<script type="text/javascript">
+	var jcontent = 
+[
+{"name": "Rajiv",
+"marks": {
+"Maths": 18,
+"English": 21,
+"Science": 45
+},"rollNumber": "KV2017-5A2"},
+{ "name": "Abhishek",
+"marks": {
+"Maths": 43,
+"English": 30,
+"Science": 37
+},"rollNumber": "KV2017-5A1"},
+{ "name": "Zoya",
+"marks": {
+"Maths": 42,
+"English": 31,
+"Science": 50
+},"rollNumber": "KV2017-5A3"}
+]
+
+	console.log(jcontent)
+
+var Result;
+
+function statuscal(i){
+
+	if(jcontent[i].marks.Maths<20 || jcontent[i].marks.English<20 || jcontent[i].marks.Science<20)
+	{
+		 document.write("fail");
+	}
+	else{
+		 document.write("pass");
+	}
+}
+
+
+</script>	
+
+	
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<h3><b>Student Result Board</b></h3>
+		</div>
+	</div>
+	<div class="row row-cols-4">
+		<div class="col-4"><h4><i>Student Name</i></h4></div>
+		<div class="col-2"><h4><i>Roll Number</i></h4></div>
+		<div class="col-3"><h4><i>Total Marks</i></h4></div>
+		<div class="col-3"><h4><i>Status</i></h4></div>
+	</div>
+	<div class="row row-cols-4">
+		<div class="col-4"><h4><script>document.write(jcontent[1].name)</script></h4></div>
+		<div class="col-2"><h4><script>document.write(jcontent[1].rollNumber)</script></h4></div>
+		<div class="col-3"><h4><script>document.write(jcontent[1].marks.Maths+jcontent[1].marks.English+jcontent[1].marks.Science)</script></h4></div>
+		<div class="col-3"><h4><script>statuscal(1)</script></h4></div>
+	</div>
+	<div class="row row-cols-4">
+		<div class="col-4"  style="color: red"><h4><script>document.write(jcontent[0].name)</script></h4></div>
+		<div class="col-2" style="color: red"><h4><script>document.write(jcontent[0].rollNumber)</script></h4></div>
+		<div class="col-3" style="color: red"><h4><script>document.write(jcontent[0].marks.Maths+jcontent[0].marks.English+jcontent[0].marks.Science)</script></h4></div>
+		<div class="col-3" style="color: red"><h4><script>statuscal(0)</script></h4></div>
+	</div>
+	<div class="row row-cols-4">
+<div class="col-4" style="color: green"><h4><script>document.write(jcontent[2].name)</script></h4></div>
+		<div class="col-2" style="color: green"><h4><script>document.write(jcontent[2].rollNumber)</script></h4></div>
+		<div class="col-3" style="color: green"><h4><script>document.write(jcontent[2].marks.Maths+jcontent[2].marks.English+jcontent[2].marks.Science)</script></h4></div>
+		<div class="col-3" style="color: green"><h4>Topper</h4></div>
+	</div>
+	
+</div>
+</body>
+</html>
