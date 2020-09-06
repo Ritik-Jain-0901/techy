@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>assignmeent1</title>
+	<link rel="stylesheet" type="text/css" href="css\bootstrap.css"> 
+	<link rel="stylesheet" type="text/css" href="techolution assignment1\assignment1.css">
+</head>
+<body>
+<script type="text/javascript">
+	var jcontent = 
+[
+{"name": "Rajiv",
+"marks": {
+"Maths": 18,
+"English": 21,
+"Science": 45
+},"rollNumber": "KV2017-5A2"},
+
+{ "name": "Abhishek",
+"marks": {
+"Maths": 43,
+"English": 30,
+"Science": 37
+},"rollNumber": "KV2017-5A1"},
+
+{ "name": "Zoya",
+"marks": {
+"Maths": 42,
+"English": 31,
+"Science": 50
+},"rollNumber": "KV2017-5A3"}
+]
+
+var n= jcontent.length;
+
+var  totalm = new Array(n);
+
+function studentname()
+{
+
+	for (var i = 0; i < n; i++) 
+	{
+		document.write(jcontent[i].name+"<br>");
+	}
+}
+
+
+function studentrollno()
+{
+
+	for (var i = 0; i < n; i++) 
+	{
+		document.write(jcontent[i].rollNumber+"<br>");
+	}
+}
+
+function total()
+	{
+
+		for(var i=0;i<n;i++)
+		{
+			 totalm[i] = jcontent[i].marks.Maths + jcontent[i].marks.English + jcontent[i].marks.Science
+			 document.write(totalm[i]+"<br>");
+		}
+		
+	}
+
+
+
+function largest()
+{	
+	var i;
+	var j;
+	var temp;
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<n-i;j++)
+		{
+
+			if(totalm[j]<totalm[j+1])
+				{	
+					temp= totalm[j];
+					totalm[j]=totalm[j+1];
+					totalm[j+1]=temp;
+				}
+		}
+
+	}
+
+	
+}
+
+ function status()
+	{
+		for (var i = 0; i < n; i++)
+		 {
+		 	if(jcontent[i].marks.Maths+jcontent[i].marks.English+jcontent[i].marks.Science==totalm[0])
+		 	{
+		 		document.write("<b style='color:green'>topper</b>");
+		 	}
+			else if(jcontent[i].marks.Maths<20 || jcontent[i].marks.English<20 || jcontent[i].marks.Science<20)
+				{document.write("<b style='color:red'>Fail</b><br>");}
+			
+			else
+				{document.write("pass<br>");}
+		}
+	}
+
+</script>
+
+<div>
+	<div class="container" style="border: 2px solid black">
+			<div class="row">
+				<div class="col">
+					<h3><b>Student Result Board</b></h3>
+				</div>
+			</div>
+	
+
+	<div class="row row-cols-4" style="border: 1px solid black">
+		<div class="col-4" style="border: 1px solid black"><h4><i>Student Name</i></h4>
+			<script>
+				studentname()
+			</script>
+		</div>
+	<div class="col-2" style="border: 1px solid black"><h4><i>Roll Number</i></h4>
+			<script>
+				studentrollno()
+			</script>
+	</div>
+
+	<div class="col-3" style="border: 1px solid black"><h4><i>Total Marks</i></h4>
+			<script>
+				total()
+				largest()
+			</script>
+	</div>
+		
+	<div class="col-3" style="border: 1px solid black"><h4><i>Status</i></h4>
+			<script>
+				status()
+			</script>
+	</div>
+</div>
